@@ -296,6 +296,7 @@
         app:layout_constraintStart_toEndOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/allItemMenu"
             android:layout_width="match_parent"
             android:background = "@drawable/chargerreen"
             android:layout_height="match_parent">

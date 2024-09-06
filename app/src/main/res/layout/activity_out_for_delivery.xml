@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".AllItemActivity">
+    tools:context=".OutForDeliveryActivity">
     <ImageButton
         android:id="@+id/backimageButton"
         android:layout_width="24sp"
@@ -22,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/yeonsung"
-        android:text="Danh sách món ăn"
+        android:text="Giao hàng"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +30,12 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/MenuRecyclerView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/item_item"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
