@@ -14,6 +14,9 @@ class OutForDeliveryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        binding.backimageButton.setOnClickListener {
+            finish()
+        }
         val customerName = arrayListOf(
             "Thang",
             "Mai",
