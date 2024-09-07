@@ -241,7 +241,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView6"
+        android:id="@+id/outForDeliveryButton"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
@@ -373,40 +373,43 @@
     <androidx.cardview.widget.CardView
         android:layout_width="150dp"
         android:layout_height="100dp"
+        android:layout_marginStart="79dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outForDeliveryButton"
         app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background = "@drawable/chargerreen"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/chargerreen">
 
 
             <ImageView
                 android:id="@+id/imageLogV"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/logout_icon"
                 android:layout_marginTop="10dp"
+                android:src="@drawable/logout_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_marginTop="28dp"
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/yeonsung"
-                android:textColor="@color/textcolor"
                 android:text="Thoát"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageLogV"
                 app:layout_constraintStart_toStartOf="@+id/imageLogV"
-                app:layout_constraintTop_toBottomOf="@+id/imageLogV"/>
+                app:layout_constraintTop_toBottomOf="@+id/imageLogV" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
