@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
     <EditText
-        android:id="@+id/nameofrestorent"
+        android:id="@+id/restaurentName"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginTop="8dp"
@@ -116,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailOrPhone"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginTop="8dp"
@@ -128,13 +128,13 @@
         android:hint="Email or Số điện thoại"
         android:inputType="text"
         android:paddingLeft="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/nameofrestorent"
-        app:layout_constraintStart_toStartOf="@+id/nameofrestorent"
-        app:layout_constraintTop_toBottomOf="@+id/nameofrestorent" />
+        app:layout_constraintEnd_toEndOf="@+id/restaurentName"
+        app:layout_constraintStart_toStartOf="@+id/restaurentName"
+        app:layout_constraintTop_toBottomOf="@+id/restaurentName" />
 
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginTop="8dp"
@@ -146,12 +146,12 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/nameofrestorent"
-        app:layout_constraintStart_toStartOf="@+id/nameofrestorent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintEnd_toEndOf="@+id/restaurentName"
+        app:layout_constraintStart_toStartOf="@+id/restaurentName"
+        app:layout_constraintTop_toBottomOf="@+id/emailOrPhone" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/createAccountButton"
+        android:id="@+id/createUserButton"
         android:layout_width="157dp"
         android:layout_height="57dp"
         android:layout_marginTop="32dp"
@@ -161,7 +161,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
         android:id="@+id/dontalreadyhavebutton"
@@ -175,9 +175,9 @@
         android:textColor="@color/textcolor"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="@+id/createAccountButton"
-        app:layout_constraintStart_toStartOf="@+id/createAccountButton"
-        app:layout_constraintTop_toBottomOf="@+id/createAccountButton" />
+        app:layout_constraintEnd_toEndOf="@+id/createUserButton"
+        app:layout_constraintStart_toStartOf="@+id/createUserButton"
+        app:layout_constraintTop_toBottomOf="@+id/createUserButton" />
 
     <TextView
         android:id="@+id/textView11"

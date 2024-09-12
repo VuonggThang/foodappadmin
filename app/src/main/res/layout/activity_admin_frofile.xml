@@ -163,7 +163,7 @@ for previewing layouts and visual " />
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/emailOrPhone"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:layout_weight="1"

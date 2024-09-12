@@ -13,7 +13,7 @@ class AdminFrofileActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.name.isEnabled = false
         binding.address.isEnabled = false
-        binding.email.isEnabled = false
+        binding.emailOrPhone.isEnabled = false
         binding.phone.isEnabled = false
         binding.password.isEnabled = false
 
@@ -22,7 +22,7 @@ class AdminFrofileActivity : AppCompatActivity() {
             isEnable = ! isEnable
             binding.name.isEnabled = isEnable
             binding.address.isEnabled = isEnable
-            binding.email.isEnabled = isEnable
+            binding.emailOrPhone.isEnabled = isEnable
             binding.phone.isEnabled = isEnable
             binding.password.isEnabled = isEnable
             if (isEnable){
