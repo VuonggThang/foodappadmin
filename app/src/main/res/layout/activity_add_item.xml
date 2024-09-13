@@ -48,7 +48,7 @@
           app:layout_constraintTop_toTopOf="@+id/backimageButton" />
 
       <EditText
-          android:id="@+id/enterfoodName"
+          android:id="@+id/foodName"
           android:layout_width="0dp"
           android:layout_height="57dp"
           android:layout_marginStart="8dp"
@@ -67,7 +67,7 @@
           app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
       <EditText
-          android:id="@+id/enterfoodPrice"
+          android:id="@+id/foodPrice"
           android:layout_width="0dp"
           android:layout_height="57dp"
           android:layout_marginTop="12dp"
@@ -79,9 +79,9 @@
           android:outlineAmbientShadowColor="@color/textcolor"
           android:paddingLeft="15dp"
           android:textSize="20sp"
-          app:layout_constraintEnd_toEndOf="@+id/enterfoodName"
-          app:layout_constraintStart_toStartOf="@+id/enterfoodName"
-          app:layout_constraintTop_toBottomOf="@+id/enterfoodName" />
+          app:layout_constraintEnd_toEndOf="@+id/foodName"
+          app:layout_constraintStart_toStartOf="@+id/foodName"
+          app:layout_constraintTop_toBottomOf="@+id/foodName" />
 
       <TextView
           android:id="@+id/textView19"
@@ -97,9 +97,9 @@
           android:paddingRight="15dp"
           android:text="Chọn Image"
           android:textColor="@color/black"
-          app:layout_constraintEnd_toEndOf="@+id/enterfoodPrice"
-          app:layout_constraintStart_toStartOf="@+id/enterfoodPrice"
-          app:layout_constraintTop_toBottomOf="@+id/enterfoodPrice" />
+          app:layout_constraintEnd_toEndOf="@+id/foodPrice"
+          app:layout_constraintStart_toStartOf="@+id/foodPrice"
+          app:layout_constraintTop_toBottomOf="@+id/foodPrice" />
 
       <androidx.cardview.widget.CardView
           android:id="@+id/cardView7"
