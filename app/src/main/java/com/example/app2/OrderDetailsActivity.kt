@@ -2,8 +2,10 @@ package com.example.app2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.app2.adapter.OrderDetailsAdapter
 import com.example.app2.databinding.ActivityOrderDetailsBinding
+import com.example.app2.model.OrderDetails
 
 class OrderDetailsActivity : AppCompatActivity() {
     private val binding: ActivityOrderDetailsBinding by lazy {
@@ -14,10 +16,10 @@ class OrderDetailsActivity : AppCompatActivity() {
     private var phoneNumber :String? = null
     private var totalPrice :String? = null
 
-    private  var foodNames :MutableList<String> = mutableListOf()
-    private  var foodImages :MutableList<String> = mutableListOf()
-    private  var foodQuantity :MutableList<String> = mutableListOf()
-    private  var foodPrices :MutableList<String> = mutableListOf()
+    private  var foodNames :ArrayList<String> = arrayListOf()
+    private  var foodImages :ArrayList<String> = arrayListOf()
+    private  var foodQuantity :ArrayList<Int> = arrayListOf()
+    private  var foodPrices :ArrayList<String> = arrayListOf()
 
 
 
@@ -31,6 +33,33 @@ class OrderDetailsActivity : AppCompatActivity() {
     }
 
     private fun getDataFromIntent() {
+        val receivedOrderDetails = intent.getSerializableExtra("UserOrderDetails") as OrderDetails
+        receivedOrderDetails?.let {orderDetails ->
 
+                userName = receivedOrderDetails.userName
+                foodNames = receivedOrderDetails.foodNames as ArrayList<String>
+                foodImages = receivedOrderDetails.foodImages as ArrayList<String>
+                foodQuantity = receivedOrderDetails.foodQuantities as ArrayList<Int>
+                address = receivedOrderDetails.address
+                phoneNumber = receivedOrderDetails.phoneNumber
+                foodPrices = receivedOrderDetails.foodPrices as ArrayList<String>
+                totalPrice = receivedOrderDetails.totalPrice
+                setUserDetails()
+                setAdapter()
+        }
+    }
+
+
+
+    private fun setUserDetails() {
+        binding.name.text = userName
+        binding.address.text = address
+        binding.phone.text = phoneNumber
+        binding.totalPay.text = totalPrice
+    }
+    private fun setAdapter() {
+        binding.orderDetailsRecyclerView.layoutManager = LinearLayoutManager(this)
+        val adapter = OrderDetailsAdapter(this,foodNames,foodImages,foodQuantity,foodPrices)
+        binding.orderDetailsRecyclerView.adapter = adapter
     }
 }

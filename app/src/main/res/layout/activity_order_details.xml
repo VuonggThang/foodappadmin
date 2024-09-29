@@ -70,7 +70,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <EditText
+            <TextView
 
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <EditText
+            <TextView
 
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <EditText
+            <TextView
 
                 android:id="@+id/phone"
                 android:layout_width="wrap_content"
@@ -156,8 +156,49 @@
                 android:fontFamily="@font/lato_regular"
                 android:inputType="text" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/profileedittextshape"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25">
+
+            <TextView
+
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/yeonsung"
+                android:paddingLeft="8dp"
+                android:text="Tổng tiền"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+
+                android:id="@+id/totalPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="end"
+                android:layout_marginEnd="20dp"
+                android:text="10"
+                android:textSize="20sp"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="@color/textcolor"
+                android:inputType="text" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderDetailsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"

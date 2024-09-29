@@ -19,6 +19,10 @@ class PendingOrderAdapter(
 
     interface OnItemClicked{
         fun onItemClickListener(position: Int)
+        fun onItemAcceptClickListener(position: Int)
+        fun onItemDispatchClickListener(position: Int)
+
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
         val binding =
@@ -49,13 +53,15 @@ class PendingOrderAdapter(
                     }
                     setOnClickListener {
                         if (!isAccepted) {
-                            text = "không gửi đi"
+                            text = "Gửi đi"
                             isAccepted = true
                             showToast("Đơn hàng được chấp nhận")
+                            itemClicked.onItemAcceptClickListener(position)
                         } else {
                             customerNames.removeAt(adapterPosition)
                             notifyItemRemoved(adapterPosition)
                             showToast("Đơn hàng được gửi đi")
+                            itemClicked.onItemDispatchClickListener(position)
 
                         }
                     }
