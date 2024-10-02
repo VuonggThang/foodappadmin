@@ -42,7 +42,7 @@ class OutForDeliveryActivity : AppCompatActivity() {
                 //clear the list before populating it with new data
                 listOfCompleteOrderList.clear()
                 for (orderSnapshot in snapshot.children){
-                  val completeOrder = orderSnapshot.getValue(OrderDetails::class.java)
+                    val completeOrder = orderSnapshot.getValue(OrderDetails::class.java)
                     completeOrder?.let {
                         listOfCompleteOrderList.add(it)
                     }
