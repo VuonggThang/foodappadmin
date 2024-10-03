@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app2.adapter.MenuItemAdapter
 import com.example.app2.databinding.ActivityAllItemBinding
@@ -60,8 +61,25 @@ class AllItemActivity : AppCompatActivity() {
         }
 
     private fun setAdapter() {
-        val adapter = MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference)
+
+        val adapter = MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference){position ->
+            deleteMenuItems(position)
+        }
         binding.MenuRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.MenuRecyclerView.adapter = adapter
+    }
+
+    private fun deleteMenuItems(position: Int) {
+        val menuItemIoDelete = menuItems[position]
+        val menuItemKey = menuItemIoDelete.key
+        val foodMenuReference = database.reference.child("menu").child(menuItemKey!!)
+        foodMenuReference.removeValue().addOnCompleteListener { task->
+            if (task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.MenuRecyclerView.adapter?.notifyItemRemoved(position)
+            }else{
+                Toast.makeText(this,"Item không bị xoá",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

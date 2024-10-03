@@ -11,7 +11,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.getValue
+
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -45,6 +45,11 @@ class MainActivity : AppCompatActivity() {
         binding.pendingOrderTextView.setOnClickListener{
             val intent = Intent(this, PendingOrderActivity::class.java)
             startActivity(intent)
+        }
+        binding.logoutButton.setOnClickListener{
+            auth.signOut()
+            startActivity(Intent(this,LoginActivity::class.java))
+            finish()
         }
 
         pendingOrders()
