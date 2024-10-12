@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <ImageView
@@ -22,10 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Waves Of Food"
-        android:textSize="40dp"
         android:fontFamily="@font/yeonsung"
+        android:text="Làn Sóng Đồ ăn"
         android:textColor="@color/black"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,9 +34,9 @@
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="108dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,8 +74,8 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="28sp"
+                android:layout_height="28sp"
                 android:src="@drawable/icon__1_"
                 app:layout_constraintEnd_toEndOf="@+id/pendingOrderTextView"
                 app:layout_constraintStart_toStartOf="@+id/pendingOrderTextView"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/yeonsung"
-                android:text="Chờ đặt hàng"
+                android:text="Đặt hàng"
                 android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
@@ -96,7 +96,7 @@
                 android:id="@+id/pendingOrders"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato_bold"
                 android:text="30"
                 android:textSize="20dp"
@@ -106,8 +106,8 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="28sp"
+                android:layout_height="28sp"
                 android:src="@drawable/check_circle_broken"
                 app:layout_constraintEnd_toEndOf="@+id/textView16"
                 app:layout_constraintStart_toStartOf="@+id/textView16"
@@ -117,10 +117,10 @@
                 android:id="@+id/textView16"
                 android:layout_width="104dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/yeonsung"
-                android:text="Hoàn thành \nđặt hàng"
+                android:text="Đơn hàng đã gửi"
                 android:textAlignment="center"
                 app:layout_constraintStart_toEndOf="@+id/pendingOrderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6" />
@@ -129,7 +129,7 @@
                 android:id="@+id/completeOrders"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato_bold"
                 android:text="30"
                 android:textSize="20dp"
@@ -139,39 +139,70 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/moneyicon"
-                app:layout_constraintEnd_toEndOf="@+id/textView17"
-                app:layout_constraintStart_toStartOf="@+id/textView17"
+                android:layout_width="28sp"
+                android:layout_height="28sp"
+                android:src="@drawable/sademoji"
+                app:layout_constraintEnd_toEndOf="@+id/cancelDetails"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
                 app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="79dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/yeonsung"
-                android:text="Tiền nhận được"
+                android:text="Tiền đã thanh toán"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toStartOf="@+id/guideline4"
-                app:layout_constraintHorizontal_bias="0.982"
                 app:layout_constraintStart_toEndOf="@+id/textView16"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+            <TextView
+                android:id="@+id/cancelOders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="30"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cancelDetails"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintTop_toBottomOf="@+id/cancelDetails" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="28sp"
+                android:layout_height="28sp"
+                android:src="@drawable/moneyicon"
+                app:layout_constraintEnd_toEndOf="@+id/textView17"
+                app:layout_constraintStart_toStartOf="@+id/textView17"
+                app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+            <TextView
+                android:id="@+id/cancelDetails"
+                android:layout_width="79dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/yeonsung"
+                android:text="Đơn huỷ"
+                android:textAlignment="center"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                tools:layout_editor_absoluteY="36dp" />
 
             <TextView
                 android:id="@+id/wholeTimeEarning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato_bold"
                 android:text="30"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textView17"
-                app:layout_constraintHorizontal_bias="0.49"
                 app:layout_constraintStart_toStartOf="@+id/textView17" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -186,35 +217,36 @@
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/addMenu"
             android:layout_width="match_parent"
-            android:background = "@drawable/chargerreen"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/chargerreen">
 
 
             <ImageView
                 android:id="@+id/imageaddmenu"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/plus_circle"
                 android:layout_marginTop="10dp"
+                android:src="@drawable/plus_circle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_marginTop="28dp"
                 android:id="@+id/textMenuV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/yeonsung"
-                android:textColor="@color/textcolor"
                 android:text="Thêm menu"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageaddmenu"
                 app:layout_constraintStart_toStartOf="@+id/imageaddmenu"
-                app:layout_constraintTop_toBottomOf="@+id/imageaddmenu"/>
+                app:layout_constraintTop_toBottomOf="@+id/imageaddmenu" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -229,35 +261,36 @@
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/profile"
             android:layout_width="match_parent"
-            android:background = "@drawable/chargerreen"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/chargerreen">
 
 
             <ImageView
                 android:id="@+id/imageprofile"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/profile_icon"
                 android:layout_marginTop="10dp"
+                android:src="@drawable/profile_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_marginTop="28dp"
                 android:id="@+id/textprofileV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/yeonsung"
-                android:textColor="@color/textcolor"
                 android:text="Hồ sơ"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageprofile"
                 app:layout_constraintStart_toStartOf="@+id/imageprofile"
-                app:layout_constraintTop_toBottomOf="@+id/imageprofile"/>
+                app:layout_constraintTop_toBottomOf="@+id/imageprofile" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -272,34 +305,35 @@
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background = "@drawable/chargerreen"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/chargerreen">
 
 
             <ImageView
                 android:id="@+id/imagebag"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/bag_icon"
                 android:layout_marginTop="10dp"
+                android:src="@drawable/bag_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_marginTop="28dp"
                 android:id="@+id/textorderV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/yeonsung"
-                android:textColor="@color/textcolor"
                 android:text="Đơn hàng "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imagebag"
                 app:layout_constraintStart_toStartOf="@+id/imagebag"
-                app:layout_constraintTop_toBottomOf="@+id/imagebag"/>
+                app:layout_constraintTop_toBottomOf="@+id/imagebag" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -317,35 +351,36 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/allItemMenu"
             android:layout_width="match_parent"
-            android:background = "@drawable/chargerreen"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/chargerreen">
 
 
             <ImageView
                 android:id="@+id/imageeye"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/eye"
                 android:layout_marginTop="10dp"
+                android:src="@drawable/eye"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_marginTop="28dp"
                 android:id="@+id/textMonV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/yeonsung"
-                android:textColor="@color/textcolor"
                 android:text="Danh sách món"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageeye"
                 app:layout_constraintStart_toStartOf="@+id/imageeye"
-                app:layout_constraintTop_toBottomOf="@+id/imageeye"/>
+                app:layout_constraintTop_toBottomOf="@+id/imageeye" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -360,11 +395,12 @@
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/createUser"
             android:layout_width="match_parent"
-            android:background = "@drawable/chargerreen"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/chargerreen">
 
 
             <ImageView
@@ -378,17 +414,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_marginTop="28dp"
                 android:id="@+id/textcreateUserV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/yeonsung"
-                android:textColor="@color/textcolor"
                 android:text="Tạo mới người dùng"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imagecreateUser"
                 app:layout_constraintStart_toStartOf="@+id/imagecreateUser"
-                app:layout_constraintTop_toBottomOf="@+id/imagecreateUser"/>
+                app:layout_constraintTop_toBottomOf="@+id/imagecreateUser" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -441,11 +477,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:textSize="16sp"
         android:fontFamily="@font/yeonsung"
-        android:textAlignment="center"
         android:text="Thiết kế \n bởi Thắng"
+        android:textAlignment="center"
         android:textColor="@color/textcolor"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

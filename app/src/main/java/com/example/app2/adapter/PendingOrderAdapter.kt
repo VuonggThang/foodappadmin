@@ -21,7 +21,7 @@ class PendingOrderAdapter(
         fun onItemClickListener(position: Int)
         fun onItemAcceptClickListener(position: Int)
         fun onItemDispatchClickListener(position: Int)
-
+//        fun onItemRejectClickListener(position: Int) // Thêm dòng này
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
@@ -69,6 +69,7 @@ class PendingOrderAdapter(
                 itemView.setOnClickListener {
                     itemClicked.onItemClickListener(position)
                 }
+
             }
         }
         private fun showToast(message:String){
@@ -77,4 +78,3 @@ class PendingOrderAdapter(
     }
 
 }
-

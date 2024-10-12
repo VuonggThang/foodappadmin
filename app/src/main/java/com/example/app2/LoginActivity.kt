@@ -14,6 +14,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
@@ -52,9 +54,10 @@ class LoginActivity : AppCompatActivity() {
             email = binding.email.text.toString().trim()
             password = binding.password.text.toString().trim()
             if (email.isBlank() || password.isBlank()) {
-                Toast.makeText(this, "hay dien day du thong tin", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Nhập thông tin chi tiết", Toast.LENGTH_SHORT).show()
             } else {
-                createUserAccount(email, password)
+                //createUserAccount(email, password)
+                loginUser(email, password)
             }
         }
         binding.googleButton.setOnClickListener{
@@ -67,41 +70,21 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun createUserAccount(email: String, password: String) {
+
+    private fun loginUser(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val user = auth.currentUser
-                Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
                 updateUi(user)
             } else {
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        val user = auth.currentUser
-                        Toast.makeText(
-                            this,
-                            "Tạo người dùng và đăng nhập thành công",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        saveUserData()
-                        updateUi(user)
-                    } else {
-                        Toast.makeText(this, "Xac thuc khong thanh cong", Toast.LENGTH_SHORT).show()
-                        Log.d("Account", "Tao tai khoan nguoi dung: that bai", task.exception)
-                    }
-                }
+                // Tài khoản không tồn tại, chuyển đến màn hình đăng ký
+                Toast.makeText(this, "Tài khoản không tồn tại, vui lòng đăng ký", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, SignActivity::class.java)
+                startActivity(intent)
             }
         }
     }
 
-    private fun saveUserData() {
-        email = binding.email.text.toString().trim()
-        password = binding.password.text.toString().trim()
-        val user = UserModel(userName, nameOfRestaurant, email, password)
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-        userId?.let {
-            database.child("user").child(it).setValue(user)
-        }
-    }
 
     private val launcher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {

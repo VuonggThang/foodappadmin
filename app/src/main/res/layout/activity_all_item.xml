@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".AllItemActivity">
+
     <ImageButton
         android:id="@+id/backimageButton"
-        android:layout_width="24sp"
-        android:layout_height="24sp"
+        android:layout_width="28sp"
+        android:layout_height="28sp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/arrow_left"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
@@ -24,11 +26,10 @@
         android:fontFamily="@font/yeonsung"
         android:text="Danh sách món ăn"
         android:textColor="@color/black"
-        android:textSize="40dp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/backimageButton"
-        app:layout_constraintTop_toTopOf="@+id/backimageButton"
-        />
+        app:layout_constraintTop_toTopOf="@+id/backimageButton" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MenuRecyclerView"

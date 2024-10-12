@@ -3,6 +3,7 @@ package com.example.app2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.app2.databinding.ActivityMainBinding
 import com.example.app2.model.OrderDetails
 import com.google.firebase.auth.FirebaseAuth
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
         binding.addMenu.setOnClickListener {
             val intent = Intent(this, AddItemActivity::class.java)
             startActivity(intent)
@@ -46,8 +49,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PendingOrderActivity::class.java)
             startActivity(intent)
         }
+        binding.cancelDetails.setOnClickListener{
+
+        }
         binding.logoutButton.setOnClickListener{
             auth.signOut()
+            Log.d("Logout","onData:Logout")
             startActivity(Intent(this,LoginActivity::class.java))
             finish()
         }
@@ -57,6 +64,23 @@ class MainActivity : AppCompatActivity() {
         competedOrders()
 
         wholeTimeEarning()
+
+        cancelOrders()
+    }
+
+    private fun cancelOrders() {
+        val completeOrderReference = database.reference.child("CancelOrders")
+        var cancelOrders = 0
+        completeOrderReference.addListenerForSingleValueEvent(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                cancelOrders = snapshot.childrenCount.toInt()
+                binding.cancelOders.text = cancelOrders.toString()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 
     private fun wholeTimeEarning() {
@@ -97,12 +121,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun pendingOrders() {
         database = FirebaseDatabase.getInstance()
-        val pendingOrderReference = database.reference.child("OrderDetails")
+        var pendingOrderReference = database.reference.child("OrderDetails")
         var pendingOrderItemCount = 0
         pendingOrderReference.addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 pendingOrderItemCount = snapshot.childrenCount.toInt()
-                binding.pendingOrders.text = pendingOrderItemCount.toString()
+                runOnUiThread {
+                    binding.pendingOrders.text = pendingOrderItemCount.toString()
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {

@@ -45,7 +45,7 @@ class SignActivity : AppCompatActivity() {
             password = binding.password.text.toString().trim()
 
             if (userName.isBlank() || nameOfRestaurant.isBlank() || email.isBlank() || password.isBlank()){
-                Toast.makeText(this,"hay dien day du thong tin",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Hãy điền đầy đủ thông tin của bạn",Toast.LENGTH_SHORT).show()
             }else{
                 createAccount(email, password)
             }
@@ -54,7 +54,7 @@ class SignActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        val locationList = arrayOf("ha noi", "ha noi1", "ha noi2", "ha noi3")
+        val locationList = arrayOf("Hà Nội", "Hồ Chí Minh", "Hải Dương")
         val adapter = ArrayAdapter(this, simple_list_item_1, locationList)
         val autoCompleteTextView = binding.listOfLocation
         autoCompleteTextView.setAdapter(adapter)

@@ -16,6 +16,8 @@ class OrderDetails():Serializable {
     var phoneNumber :String?=null
     var orderAccepted :Boolean=false
     var paymentReceived :Boolean=false
+    var isCancelled: Boolean = false // Thêm thuộc tính này
+    var orderStatus: String? = null
     var itemPushKey: String? = null
     var currentTime: Long = 0
 
@@ -27,6 +29,8 @@ class OrderDetails():Serializable {
         phoneNumber = parcel.readString()
         orderAccepted = parcel.readByte() != 0.toByte()
         paymentReceived = parcel.readByte() != 0.toByte()
+        isCancelled = parcel.readByte() != 0.toByte() // Thêm dòng này để đọc giá trị isCancelled
+        orderStatus = parcel.readString()
         itemPushKey = parcel.readString()
         currentTime = parcel.readLong()
     }
@@ -34,10 +38,22 @@ class OrderDetails():Serializable {
      fun describeContents(): Int {
         TODO("Not yet implemented")
     }
-
-     fun writeToParcel(p0: Parcel, p1: Int) {
-        TODO("Not yet implemented")
+     fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(userUid)
+        parcel.writeString(userName)
+        parcel.writeString(address)
+        parcel.writeString(totalPrice)
+        parcel.writeString(phoneNumber)
+        parcel.writeByte(if (orderAccepted) 1 else 0)
+        parcel.writeByte(if (paymentReceived) 1 else 0)
+        parcel.writeByte(if (isCancelled) 1 else 0) // Ghi giá trị isCancelled
+        parcel.writeString(orderStatus)
+        parcel.writeString(itemPushKey)
+        parcel.writeLong(currentTime)
     }
+//     fun writeToParcel(p0: Parcel, p1: Int) {
+//        TODO("Not yet implemented")
+//    }
 
     companion object CREATOR : Parcelable.Creator<OrderDetails> {
         override fun createFromParcel(parcel: Parcel): OrderDetails {

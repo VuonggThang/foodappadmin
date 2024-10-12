@@ -25,8 +25,8 @@
 
       <ImageButton
           android:id="@+id/backimageButton"
-          android:layout_width="24dp"
-          android:layout_height="24dp"
+          android:layout_width="28dp"
+          android:layout_height="28dp"
           android:layout_marginLeft="16dp"
           android:layout_marginTop="16dp"
           android:background="@android:color/transparent"
@@ -42,7 +42,7 @@
           android:fontFamily="@font/yeonsung"
           android:text="Thêm món ăn"
           android:textColor="@color/black"
-          android:textSize="40dp"
+          android:textSize="30sp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toEndOf="@+id/backimageButton"
           app:layout_constraintTop_toTopOf="@+id/backimageButton" />

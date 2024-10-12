@@ -41,30 +41,30 @@ class MenuItemAdapter(
                 priceTextView.text = menuItem.foodPrice
                 Glide.with(context).load(uri).into(foodImageView)
 
-                quantityTextView.text = quantity.toString()
-                minusbutton.setOnClickListener {
-                    deceaseQuantity(position)
-                }
-                plusbutton.setOnClickListener {
-                    increaseQuantity(position)
-                }
+//                quantityTextView.text = quantity.toString()
+//                minusbutton.setOnClickListener {
+//                    deceaseQuantity(position)
+//                }
+//                plusbutton.setOnClickListener {
+//                    increaseQuantity(position)
+//                }
                 deleteButton.setOnClickListener {
                     onDeleteClickListener(position)
                 }
             }
         }
-        private fun increaseQuantity(position: Int) {
-            if (itemQuantities[position] < 10) {
-                itemQuantities[position]++
-                binding.quantityTextView.text = itemQuantities[position].toString()
-            }
-        }
-        private fun deceaseQuantity(position: Int) {
-            if (itemQuantities[position] > 1) {
-                itemQuantities[position]--
-                binding.quantityTextView.text = itemQuantities[position].toString()
-            }
-        }
+//        private fun increaseQuantity(position: Int) {
+//            if (itemQuantities[position] < 10) {
+//                itemQuantities[position]++
+//                binding.quantityTextView.text = itemQuantities[position].toString()
+//            }
+//        }
+//        private fun deceaseQuantity(position: Int) {
+//            if (itemQuantities[position] > 1) {
+//                itemQuantities[position]--
+//                binding.quantityTextView.text = itemQuantities[position].toString()
+//            }
+//        }
 
         private fun deleteQuantity(position: Int) {
             menuList.removeAt(position) //removeAt

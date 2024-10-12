@@ -50,7 +50,6 @@ class OrderDetailsActivity : AppCompatActivity() {
     }
 
 
-
     private fun setUserDetails() {
         binding.name.text = userName
         binding.address.text = address
@@ -63,3 +62,4 @@ class OrderDetailsActivity : AppCompatActivity() {
         binding.orderDetailsRecyclerView.adapter = adapter
     }
 }
+
