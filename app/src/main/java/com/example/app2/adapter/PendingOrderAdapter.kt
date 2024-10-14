@@ -21,7 +21,7 @@ class PendingOrderAdapter(
         fun onItemClickListener(position: Int)
         fun onItemAcceptClickListener(position: Int)
         fun onItemDispatchClickListener(position: Int)
-//        fun onItemRejectClickListener(position: Int) // Thêm dòng này
+        fun onItemRejectClickListener(position: Int) // Thêm dòng này
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
@@ -66,6 +66,14 @@ class PendingOrderAdapter(
                         }
                     }
                 }
+                // Xử lý sự kiện nút "Huỷ"
+                orderedRejectButton.setOnClickListener {
+                    customerNames.removeAt(adapterPosition)  // Xoá đơn hàng
+                    notifyItemRemoved(adapterPosition)       // Cập nhật RecyclerView
+                    showToast("Đơn hàng đã bị huỷ")          // Hiển thị thông báo
+                    itemClicked.onItemRejectClickListener(position)  // Gọi callback
+                }
+
                 itemView.setOnClickListener {
                     itemClicked.onItemClickListener(position)
                 }

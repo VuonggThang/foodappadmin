@@ -185,11 +185,12 @@
                 android:layout_width="79dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/yeonsung"
                 android:text="Đơn huỷ"
                 android:textAlignment="center"
                 app:layout_constraintStart_toEndOf="@+id/textView17"
-                tools:layout_editor_absoluteY="36dp" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
             <TextView
                 android:id="@+id/wholeTimeEarning"
@@ -209,9 +210,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
@@ -239,10 +240,10 @@
                 android:id="@+id/textMenuV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/yeonsung"
                 android:text="Thêm menu"
-                android:textColor="@color/textcolor"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageaddmenu"
                 app:layout_constraintStart_toStartOf="@+id/imageaddmenu"
@@ -253,9 +254,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
@@ -283,10 +284,10 @@
                 android:id="@+id/textprofileV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/yeonsung"
                 android:text="Hồ sơ"
-                android:textColor="@color/textcolor"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageprofile"
                 app:layout_constraintStart_toStartOf="@+id/imageprofile"
@@ -297,9 +298,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/outForDeliveryButton"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
@@ -326,10 +327,10 @@
                 android:id="@+id/textorderV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/yeonsung"
                 android:text="Đơn hàng "
-                android:textColor="@color/textcolor"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imagebag"
                 app:layout_constraintStart_toStartOf="@+id/imagebag"
@@ -340,11 +341,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -373,10 +374,10 @@
                 android:id="@+id/textMonV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/yeonsung"
                 android:text="Danh sách món"
-                android:textColor="@color/textcolor"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageeye"
                 app:layout_constraintStart_toStartOf="@+id/imageeye"
@@ -387,10 +388,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView4"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -417,10 +418,10 @@
                 android:id="@+id/textcreateUserV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/yeonsung"
                 android:text="Tạo mới người dùng"
-                android:textColor="@color/textcolor"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imagecreateUser"
                 app:layout_constraintStart_toStartOf="@+id/imagecreateUser"
@@ -430,10 +431,11 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:id="@+id/cardView9"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:outlineSpotShadowColor="@color/textcolor"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -460,14 +462,60 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/yeonsung"
                 android:text="Thoát"
-                android:textColor="@color/textcolor"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageLogV"
                 app:layout_constraintStart_toStartOf="@+id/imageLogV"
                 app:layout_constraintTop_toBottomOf="@+id/imageLogV" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        android:outlineSpotShadowColor="@color/textcolor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView9"
+        app:layout_constraintStart_toStartOf="@+id/outForDeliveryButton"
+        app:layout_constraintTop_toBottomOf="@+id/cardView9">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/btnThongke"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/chargerreen">
+
+
+            <ImageView
+                android:id="@+id/imageThongke"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/logout_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/yeonsung"
+                android:text="Thống kê"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageThongke"
+                app:layout_constraintStart_toStartOf="@+id/imageThongke"
+                app:layout_constraintTop_toBottomOf="@+id/imageThongke" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

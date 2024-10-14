@@ -54,10 +54,10 @@ class SignActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        val locationList = arrayOf("Hà Nội", "Hồ Chí Minh", "Hải Dương")
-        val adapter = ArrayAdapter(this, simple_list_item_1, locationList)
-        val autoCompleteTextView = binding.listOfLocation
-        autoCompleteTextView.setAdapter(adapter)
+//        val locationList = arrayOf("Hà Nội", "Hồ Chí Minh", "Hải Dương")
+//        val adapter = ArrayAdapter(this, simple_list_item_1, locationList)
+//        val autoCompleteTextView = binding.listOfLocation
+//        autoCompleteTextView.setAdapter(adapter)
     }
 
     private fun createAccount(email: String, password: String) {

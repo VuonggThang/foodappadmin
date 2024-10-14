@@ -86,29 +86,31 @@
                 android:id="@+id/orderedAcceptButton"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_marginEnd="8dp"
                 android:background="@drawable/greenbutton"
                 android:fontFamily="@font/lato_bold"
                 android:text="Chấp nhận"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/orderedRejectButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.542" />
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/orderedRejectButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittextshape"
+                android:text="Huỷ"
+                android:textColor="#FB0303"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <!--            <androidx.appcompat.widget.AppCompatButton-->
-<!--                android:id="@+id/cancelButton"-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginEnd="20dp"-->
-<!--                android:layout_marginBottom="20dp"-->
-<!--                android:background="@drawable/edittextshape"-->
-<!--                android:text="Huỷ"-->
-<!--                android:textColor="#FB0303"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

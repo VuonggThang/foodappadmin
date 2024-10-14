@@ -49,14 +49,19 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PendingOrderActivity::class.java)
             startActivity(intent)
         }
-        binding.cancelDetails.setOnClickListener{
-
+        binding.btnThongke.setOnClickListener{
+            val intent = Intent(this,StatisticsActivity::class.java)
+            startActivity(intent)
         }
         binding.logoutButton.setOnClickListener{
             auth.signOut()
             Log.d("Logout","onData:Logout")
             startActivity(Intent(this,LoginActivity::class.java))
             finish()
+        }
+        binding.cancelDetails.setOnClickListener {
+            val intent = Intent(this,CancelActivity::class.java)
+            startActivity(intent)
         }
 
         pendingOrders()
@@ -107,17 +112,21 @@ class MainActivity : AppCompatActivity() {
     private fun competedOrders() {
         val completeOrderReference = database.reference.child("CompletedOrder")
         var completeOrderItemCount = 0
-        completeOrderReference.addListenerForSingleValueEvent(object :ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                completeOrderItemCount = snapshot.childrenCount.toInt()
-                binding.completeOrders.text = completeOrderItemCount.toString()
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
+        // Lọc các đơn hàng có paymentReceived = true
+        completeOrderReference.orderByChild("paymentReceived").equalTo(true)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    completeOrderItemCount = snapshot.childrenCount.toInt() // Đếm số đơn hàng
+                    binding.completeOrders.text = completeOrderItemCount.toString() // Hiển thị số đơn hàng
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    //Toast.makeText(this@PendingOrderActivity, "Lỗi khi tải dữ liệu", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
+
 
     private fun pendingOrders() {
         database = FirebaseDatabase.getInstance()
